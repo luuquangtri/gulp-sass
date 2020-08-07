@@ -1,0 +1,71 @@
+/// Block Element
+/// @access public
+/// @param {String} $element - Element's name
+@mixin element($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+/// Block Modifier
+/// @access public
+/// @param {String} $modifier - Modifier's name
+@mixin modifier($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+
+/// Block Element
+/// @access public
+/// @param {String} $element - Element's name
+@mixin e($element) {
+    &_#{$element} {
+        @content;
+    }
+}
+
+/// Block Modifier
+/// @access public
+/// @param {String} $modifier - Modifier's name
+@mixin m($modifier) {
+    &-#{$modifier} {
+        @content;
+    }
+}
+
+/// Media Query Responsive Device
+/// @access public
+/// @param {number breackpoint}
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+// fix center element
+@mixin ElementFixCenter($top) {
+    position: absolute;
+    top: $top;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+// flex center item
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

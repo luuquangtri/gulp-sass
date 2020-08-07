@@ -1,0 +1,17 @@
+// setting những cái dùng chung và có thể tải sử dụng lại ở 1 nơi nào đó trong code
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    // position: relative;
+    // overflow: hidden;
+}
+
+.heading-page {
+    &-main {
+        font-size: 3rem;
+        color: $color-primary-dark;
+    }
+}
+.heading-title {
+}
