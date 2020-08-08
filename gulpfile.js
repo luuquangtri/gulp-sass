@@ -1,9 +1,16 @@
 const { src, dest, watch, parallel } = require('gulp');
 const sass = require('gulp-sass');
+const wait = require("gulp-wait");
+const minifycss = require('gulp-minify-css');
 const browserSync = require("browser-sync");
 function scss() {
     src("./src/scss/main.scss")
-        .pipe(sass())
+        .pipe(wait(200))
+        .pipe(sass().on('error', sass.logError))
+        .pipe(minifycss({
+            keepSpecialComments: false,
+            removeEmpty: true
+        }))
         .pipe(dest("./src/dist"))
 }
 function run() {
